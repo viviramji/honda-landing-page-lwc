@@ -1,0 +1,46 @@
+main{
+  padding-top: 36px;
+}
+.first_heading{
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.second_heading{
+  font-size: 224px;
+  line-height: 0.8;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.responsive_image{
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+}
+.five_number{
+  font-size: 68px;
+  color: #cc0000;
+  font-weight: 700;
+}
+.benefits{
+  padding: 32px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 650;
+}
+
+/* Style for mobile */
+@media screen and (max-width: 520px) {
+  main{
+    padding-top: 24px;
+  }
+  .first_heading{
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .second_heading{
+    font-size: 96px;
+    line-height: 0.8;
+    margin-bottom: 16px;
+  }
+}
