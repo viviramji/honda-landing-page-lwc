@@ -1,3 +1,13 @@
 <template>
-  <components-car-details></components-car-details>
+  <main class="slds-p-around_medium">
+    <div class="slds-grid slds-wrap slds-m-bottom_large">
+      <div class="slds-col slds-size_12-of-12 slds-large-size_8-of-12">
+        <components-car-details selected-variant={selectedVariant}></components-car-details>
+      </div>
+      <div class="slds-col slds-size_12-of-12 slds-large-size_4-of-12">
+        <div class="slds-text-heading_large">CR-V Range</div>
+        <components-range-selection variants={crvVariants} onselection={selectionHandler}></components-range-selection>
+      </div>
+    </div>
+  </main>
 </template>

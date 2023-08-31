@@ -1,13 +1,13 @@
 <template>
   <div class="slds-grid slds-wrap">
     <div class="slds-col slds-size_12-of-12">
-      <img src="/public/assets/honda/vti/ignite_red.png" alt="Honda Image" />
+      <img src={_selectedVariant.selectedImage} alt="Honda Image" />
     </div>
     <div
       class="slds-col slds-size_12-of-12 slds-large-size_4-of-12 slds-text-align_center"
     >
       <div class="slds-text-heading_large">
-        <strong>7</strong>
+        <strong>{_selectedVariant.fuelConsumption}</strong>
       </div>
       <div class="slds-text-heading_medium">
         Fuel Consumption (miles/gallon)<sup>Est.</sup>
@@ -17,7 +17,7 @@
       class="slds-col slds-size_12-of-12 slds-large-size_4-of-12 slds-text-align_center"
     >
       <div class="slds-text-heading_large">
-        <strong>5</strong>
+        <strong>{_selectedVariant.seatingCapacity}</strong>
       </div>
       <div class="slds-text-heading_medium">Seating Capacity</div>
     </div>
@@ -25,7 +25,7 @@
       class="slds-col slds-size_12-of-12 slds-large-size_4-of-12 slds-text-align_center"
     >
       <div class="slds-text-heading_large">
-        <strong>17"</strong>
+        <strong>{_selectedVariant.alloyWheels}"</strong>
       </div>
       <div class="slds-text-heading_medium">Alloy Wheels</div>
     </div>
