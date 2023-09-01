@@ -9,7 +9,7 @@ const CRV_VARIANTS = [
     seatingCapacity: 5,
     alloyWheels: 17,
     checked: true,
-    imageName: "crystal_black",
+    imageName: "ignite_red",
   },
   {
     variant: "VTi 7",
@@ -18,7 +18,7 @@ const CRV_VARIANTS = [
     fuelConsumption: 44,
     seatingCapacity: 7,
     alloyWheels: 17,
-    imageName: "crystal_black",
+    imageName: "ignite_red",
   },
   {
     variant: "VTi X",
@@ -27,7 +27,7 @@ const CRV_VARIANTS = [
     fuelConsumption: 48,
     seatingCapacity: 5,
     alloyWheels: 18,
-    imageName: "crystal_black",
+    imageName: "ignite_red",
   },
   {
     variant: "VTi LX AWD",
@@ -36,7 +36,7 @@ const CRV_VARIANTS = [
     fuelConsumption: 55,
     seatingCapacity: 5,
     alloyWheels: 19,
-    imageName: "crystal_black",
+    imageName: "ignite_red",
   },
 ];
 
@@ -49,19 +49,45 @@ const COLORS = [
 ];
 
 export default class BuildAndPrice extends LightningElement {
+  // Define the properties for the component and set default values
   crvVariants = CRV_VARIANTS;
   selectedVariant = CRV_VARIANTS[0];
   colorsList = COLORS;
   selectedPrice = this.selectedVariant.price;
+  selectedImageName = this.colorsList[0].value;
+  selectedColorLabel = this.colorsList[0].label;
 
   // This is the event handler for the selection event
   selectionHandler(event) {
     console.log("handleSelection selected ", event.detail.selected);
     console.log("handleSelection variant ", event.detail.variant);
+    const { selected, variant } = event.detail;
+    this.selectedVariant = { ...selected, imageName: this.selectedImageName };
+    this.selectedPrice = this.selectedVariant.price;
   }
 
   // This is the event handler for the color selection event
   colorSelectionHandler(event) {
     console.log("colorSelectionHandler selected value ", event.detail);
+    this.selectedImageName = event.detail;
+    this.selectedVariant = {
+      ...this.selectedVariant,
+      imageName: this.selectedImageName,
+    };
+    this.updateColors(this.selectedImageName);
+  }
+
+  // * Allows me to update colors list with the latest selection
+  updateColors(value) {
+    this.colorsList = this.colorsList.map((color) => {
+      return { ...color, checked: color.value === value };
+    });
+  }
+
+  // * Allows me to update crvVariants list with the latest selection
+  updateVariants(value) {
+    this.crvVariants = this.crvVariants.map((variant) => {
+      return { ...variant, checked: variant.variant === value };
+    });
   }
 }
