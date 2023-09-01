@@ -1,6 +1,6 @@
 <template>
-  <main class="slds-p-around_medium">
-    <div class="slds-grid slds-wrap slds-m-bottom_large">
+  <main>
+    <div class="slds-grid slds-wrap slds-m-bottom_large slds-p-around_medium">
       <div class="slds-col slds-size_12-of-12 slds-large-size_8-of-12">
         <components-car-details
           selected-variant={selectedVariant}
@@ -20,6 +20,12 @@
             oncolorselection={colorSelectionHandler}
           ></components-color-selection>
         </template>
+      </div>
+    </div>
+    <div class="slds-grid slds-wrap">
+      <div class="sdls-col slds-large-size_12-of-12">
+        <components-price-footer price={selectedPrice}>
+        </components-price-footer>
       </div>
     </div>
   </main>

@@ -52,6 +52,7 @@ export default class BuildAndPrice extends LightningElement {
   crvVariants = CRV_VARIANTS;
   selectedVariant = CRV_VARIANTS[0];
   colorsList = COLORS;
+  selectedPrice = this.selectedVariant.price;
 
   // This is the event handler for the selection event
   selectionHandler(event) {
