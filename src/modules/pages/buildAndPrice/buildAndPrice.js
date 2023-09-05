@@ -48,6 +48,8 @@ const COLORS = [
   { label: "Platinum White (Pearlescent)", value: "platinum_white" },
 ];
 
+const ANIMATED_STARTING_PRICE = 38000;
+
 export default class BuildAndPrice extends LightningElement {
   // Define the properties for the component and set default values
   showModal = false;
@@ -57,6 +59,23 @@ export default class BuildAndPrice extends LightningElement {
   selectedPrice = this.selectedVariant.price;
   selectedImageName = this.colorsList[0].value;
   selectedColorLabel = this.colorsList[0].label;
+  animatePriceValue;
+
+  // Init
+  connectedCallback() {
+    this.animatePrice()
+  }
+
+  animatePrice() {
+    this.animatePriceValue = ANIMATED_STARTING_PRICE;
+    let interval = window.setInterval(() => {
+      if (this.selectedPrice !== this.animatePriceValue) {
+        this.animatePriceValue += 100;
+      } else {
+        window.clearInterval(interval);
+      }
+    }, 10);
+  }
 
   // This is the event handler for the selection event
   selectionHandler(event) {
@@ -65,6 +84,7 @@ export default class BuildAndPrice extends LightningElement {
     const { selected, variant } = event.detail;
     this.selectedVariant = { ...selected, imageName: this.selectedImageName };
     this.selectedPrice = this.selectedVariant.price;
+    this.animatePrice();
   }
 
   // This is the event handler for the color selection event
