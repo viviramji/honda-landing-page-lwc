@@ -1,6 +1,13 @@
 <template>
-  <footer class="slds-p-around_medium slds-wrap slds-grid slds-grid_align-spread">
+  <footer
+    class="slds-p-around_medium slds-wrap slds-grid slds-grid_align-spread"
+  >
     <div class="slds-col price">{formattedPrice}<sup>*</sup></div>
-    <button class="slds-button slds-button_destructive">Save and Contact Us</button>
+    <button
+      class="slds-button slds-button_destructive"
+      onclick={contactUsHandler}
+    >
+      Save and Contact Us
+    </button>
   </footer>
 </template>

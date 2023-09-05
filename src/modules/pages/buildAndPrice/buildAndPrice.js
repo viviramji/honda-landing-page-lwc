@@ -50,6 +50,7 @@ const COLORS = [
 
 export default class BuildAndPrice extends LightningElement {
   // Define the properties for the component and set default values
+  showModal = false;
   crvVariants = CRV_VARIANTS;
   selectedVariant = CRV_VARIANTS[0];
   colorsList = COLORS;
@@ -89,5 +90,14 @@ export default class BuildAndPrice extends LightningElement {
     this.crvVariants = this.crvVariants.map((variant) => {
       return { ...variant, checked: variant.variant === value };
     });
+  }
+
+  handleModal(event) {
+    this.showModal = !this.showModal;
+  }
+
+  submitForm() {
+    alert('Submit form');
+    this.handleModal();
   }
 }
