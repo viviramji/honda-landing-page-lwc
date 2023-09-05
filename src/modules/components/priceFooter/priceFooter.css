@@ -4,6 +4,11 @@ footer {
   display: flex;
   align-items: center;
   border-top: 1px solid #CDCDCD;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
 }
 
 .price {
