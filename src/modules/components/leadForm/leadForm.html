@@ -1,3 +1,130 @@
 <template>
-    Lead form cmp.
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+  <!--  If necessary, please modify the charset parameter to specify the        -->
+  <!--  character set of your HTML page.                                        -->
+  <!--  ----------------------------------------------------------------------  -->
+  <!-- meta tag is forbidden in lwc according to -->
+  <!-- <meta http-equiv="Content-type" content="text/html; charset=UTF-8"> -->
+
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: Please add the following <FORM> element to your page.             -->
+  <!--  ----------------------------------------------------------------------  -->
+
+  <form
+    action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+    method="POST"
+  >
+    <input type="hidden" name="oid" value="00D8b000002wdlH" />
+    <input
+      type="hidden"
+      name="retURL"
+      value="https://extraordinary-wisp-482ade.netlify.app/"
+    />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="viviramji@gmail.com">     -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="title">Title</label>
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="title"
+          maxlength="40"
+          class="slds-input"
+          name="title"
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="first_name"
+        >First Name</label
+      >
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="first_name"
+          maxlength="255"
+          class="slds-input"
+          name="first_name"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="last_name">Last Name</label>
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="last_name"
+          maxlength="255"
+          class="slds-input"
+          name="last_name"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="email">Email</label>
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="email"
+          maxlength="255"
+          class="slds-input"
+          name="email"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element slds-hide">
+      <label class="slds-form-element__label" for="company">Company Name</label>
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="company"
+          maxlength="255"
+          class="slds-input"
+          name="company"
+          value="Honda LWC"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="city">city</label>
+      <div class="slds-form-element__control">
+        <input
+          type="text"
+          id="city"
+          maxlength="255"
+          class="slds-input"
+          name="city"
+        />
+      </div>
+    </div>
+
+    <div class="slds-form-element slds-hide">
+      <label class="slds-form-element__label" for="description">Description</label>
+      <div class="slds-form-element__control">
+        <textarea
+          id="description"
+          class="slds-textarea"
+          name="description"
+        >{description}</textarea>
+      </div>
+    </div>
+
+    <input id="form-submit" type="submit" name="submit" class="slds-hide" />
+  </form>
 </template>

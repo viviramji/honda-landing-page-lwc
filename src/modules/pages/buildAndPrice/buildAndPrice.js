@@ -61,6 +61,11 @@ export default class BuildAndPrice extends LightningElement {
   selectedColorLabel = this.colorsList[0].label;
   animatePriceValue;
 
+  // Getters
+  get description() {
+    return `Customer is looking for CRV ${this.selectedVariant.variant} of color ${this.selectedColorLabel}`
+  }
+
   // Init
   connectedCallback() {
     this.animatePrice()
@@ -117,7 +122,7 @@ export default class BuildAndPrice extends LightningElement {
   }
 
   submitForm() {
-    alert('Submit form');
-    this.handleModal();
+    this.template.querySelector('components-lead-form').submitForm();
+    // this.handleModal();
   }
 }
